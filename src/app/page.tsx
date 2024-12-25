@@ -95,7 +95,7 @@ export default function Home() {
                 {language === 'en' 
                   ? <>
                       <DialogDescription>
-                        Syria Data Guide is a key platform offering diverse data sources on Syria, including demographics, geography, statistics, and research reports that helps decision-makers and researchers.
+                        A comprehensive guide offering diverse data sources on Syria, including demographics, geography, statistics, and research reports that helps decision-makers and researchers.
                       </DialogDescription>
                       <DialogDescription>
                         This is an open source project. You can view the source code and contribute on <a href="https://github.com/hamzakat/syria-data-guide" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">GitHub</a>.
@@ -103,7 +103,7 @@ export default function Home() {
                     </>
                   : <>
                       <DialogDescription className="font-ibm-plex-sans-arabic">
-                        منصة أساسية توفر مصادر بيانات متنوعة حول سوريا، تشمل الديموغرافيا والجغرافيا والإحصاءات والتقارير البحثية التي تساعد صناع القرار والباحثين.
+                        دليل شامل يوفر مصادر بيانات متنوعة حول سوريا، تشمل الديموغرافيا والجغرافيا والإحصاءات والتقارير البحثية التي تساعد صناع القرار والباحثين.
                       </DialogDescription>
                       <DialogDescription className="font-ibm-plex-sans-arabic">
                         هذا مشروع مفتوح المصدر. يمكنك عرض الكود المصدري والمساهمة على <a href="https://github.com/hamzakat/syria-data-guide" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">GitHub</a>.
