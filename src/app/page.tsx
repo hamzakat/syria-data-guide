@@ -67,7 +67,7 @@ export default function Home() {
   return (
     <div dir={dir} className="container mx-auto p-4">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6">
-        <div className="flex items-center gap-2 mb-4 sm:mb-0">
+        <div className="flex items-center gap-2 mb-4 sm:mb-0 justify-center sm:justify-start">
           <Image 
             src="/flag.svg" 
             alt="Syrian Flag" 
@@ -78,15 +78,6 @@ export default function Home() {
           <h1 className="text-3xl font-bold">
             {language === 'en' ? 'Syria Data Guide' : 'دليل البيانات السورية'}
           </h1>
-          <a href="https://github.com/hamzakat/syria-data-guide" target="_blank" rel="noopener noreferrer" className="flex items-center">
-            <Image 
-              src="/github.svg"
-              alt="GitHub Repository" 
-              width={30} 
-              height={30} 
-              className="inline-block ml-2"
-            />
-          </a>
         </div>
         <div className="grid grid-cols-2 gap-2 sm:flex sm:items-center sm:gap-4">
           <Dialog>
@@ -216,6 +207,18 @@ export default function Home() {
             </Card>
           </a>
         ))}
+      </div>
+
+      <div className="flex justify-center mt-6">
+        <a href="https://github.com/hamzakat/syria-data-guide" target="_blank" rel="noopener noreferrer" className="flex items-center">
+          <Image 
+            src="/github.svg"
+            alt="GitHub Repository" 
+            width={30} 
+            height={30} 
+            className="inline-block"
+          />
+        </a>
       </div>
     </div>
   );
