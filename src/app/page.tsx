@@ -1,12 +1,10 @@
 'use client';
 
-import { AwaitedReactNode, JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useState } from 'react';
+import { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { useLanguage } from '@/contexts/LanguageContext';
 import sources from '@/data/sources.yaml';
-import { Icons } from '@/components/icons';
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import Image from 'next/image';
@@ -23,6 +21,20 @@ interface Topic {
   ar: string;
 }
 
+interface Source {
+  title: {
+    en: string;
+    ar: string;
+  };
+  description: {
+    en: string;
+    ar: string;
+  };
+  url: string;
+  formats?: Format[];
+  topics?: Topic[];
+}
+
 export default function Home() {
   const { language, setLanguage, dir } = useLanguage();
   const [formatFilters, setFormatFilters] = useState<string[]>([]);
@@ -30,16 +42,16 @@ export default function Home() {
 
   // Updated: Get unique formats and topics using object keys to ensure uniqueness
   const uniqueFormats: Format[] = Array.from(
-    new Set(sources.flatMap((source: { formats?: Format[] }) => source.formats?.map((format: Format) => format.id) || []))
-  ).map((formatId: string) => {
-    const format = sources.flatMap((s: { formats?: Format[] }) => s.formats || []).find((f: Format) => f.id === formatId);
+    new Set(sources.flatMap((source: Source) => source.formats?.map(format => format.id) || []))
+  ).map((formatId: unknown) => {
+    const format = sources.flatMap((s: Source) => s.formats || []).find((f: Format) => f.id === formatId as string);
     return format!;
   });
 
   const uniqueTopics: Topic[] = Array.from(
-    new Set(sources.flatMap(source => source.topics?.map(topic => topic.id) || []))
-  ).map(topicId => {
-    const topic = sources.flatMap(s => s.topics || []).find(t => t.id === topicId);
+    new Set(sources.flatMap((source: Source) => source.topics?.map(topic => topic.id) || []))
+  ).map((topicId: unknown) => {
+    const topic = sources.flatMap((s: Source) => s.topics || []).find((t: Topic) => t.id === topicId as string);
     return topic!;
   });
 
@@ -159,7 +171,7 @@ export default function Home() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {filteredSources.map((source, index) => (
+        {filteredSources.map((source: Source, index: number) => (
           <a href={source.url} target="_blank" rel="noopener noreferrer" key={index} className="h-full">
             <Card className="hover:shadow-lg transition-shadow h-full">
               <CardHeader className="h-full flex flex-col">
