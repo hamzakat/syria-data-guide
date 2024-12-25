@@ -1,101 +1,177 @@
-import Image from "next/image";
+'use client';
+
+import { AwaitedReactNode, JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useState } from 'react';
+import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
+import { useLanguage } from '@/contexts/LanguageContext';
+import sources from '@/data/sources.yaml';
+import { Icons } from '@/components/icons';
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import Image from 'next/image';
+
+interface Format {
+  id: string;
+  en: string;
+  ar: string;
+}
+
+interface Topic {
+  id: string;
+  en: string;
+  ar: string;
+}
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const { language, setLanguage, dir } = useLanguage();
+  const [formatFilters, setFormatFilters] = useState<string[]>([]);
+  const [topicFilters, setTopicFilters] = useState<string[]>([]);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  // Updated: Get unique formats and topics using object keys to ensure uniqueness
+  const uniqueFormats: Format[] = Array.from(
+    new Set(sources.flatMap((source: { formats?: Format[] }) => source.formats?.map((format: Format) => format.id) || []))
+  ).map((formatId: string) => {
+    const format = sources.flatMap((s: { formats?: Format[] }) => s.formats || []).find((f: Format) => f.id === formatId);
+    return format!;
+  });
+
+  const uniqueTopics: Topic[] = Array.from(
+    new Set(sources.flatMap(source => source.topics?.map(topic => topic.id) || []))
+  ).map(topicId => {
+    const topic = sources.flatMap(s => s.topics || []).find(t => t.id === topicId);
+    return topic!;
+  });
+
+  const filteredSources = sources.filter((source: { formats?: Format[]; topics?: Topic[] }) => {
+    const formatMatch = formatFilters.length === 0 || 
+      source.formats?.some((format: Format) => formatFilters.includes(format.id)) || false;
+    const topicMatch = topicFilters.length === 0 || 
+      source.topics?.some((topic: Topic) => topicFilters.includes(topic.id)) || false;
+    return formatMatch && topicMatch;
+  });
+
+  return (
+    <div dir={dir} className="container mx-auto p-4">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6">
+        <div className="flex items-center gap-2 mb-4 sm:mb-0">
+          <Image 
+            src="/flag.svg" 
+            alt="Syrian Flag" 
+            width={32} 
+            height={24} 
+            className="inline-block"
+          />
+          <h1 className="text-3xl font-bold">
+            {language === 'en' ? 'Syria Data Guide' : 'دليل البيانات السورية'}
+          </h1>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="grid grid-cols-2 gap-2 sm:flex sm:items-center sm:gap-4">
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="outline" className="w-full sm:w-auto">
+                {language === 'en' ? 'About' : 'حول'}
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>
+                  {language === 'en' ? 'About' : 'حول'}
+                </DialogTitle>
+                <DialogDescription>
+                  {language === 'en' 
+                    ? 'Syria Data Guide is a comprehensive directory of data sources about Syria, including demographic, geographic, and statistical data, and reports published by institutes and think tanks.'
+                    : 'دليل شامل لمصادر البيانات حول سوريا، بما في ذلك البيانات الديموغرافية والجغرافية والإحصائية والتقارير الصادرة عن المراكز البحثية.'
+                  }
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
+          <Button 
+            onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
+            className="w-full sm:w-auto"
+          >
+            {language === 'en' ? 'العربية' : 'English'}
+          </Button>
+        </div>
+      </div>
+
+      <div className="space-y-4 mb-6">
+        <div>
+          <h2 className="text-sm font-medium mb-2">
+            {language === 'en' ? 'Data Format' : 'الصيغة'}
+          </h2>
+          <ToggleGroup
+            type="multiple"
+            value={formatFilters}
+            onValueChange={setFormatFilters}
+            className={`flex flex-wrap gap-2 ${language === 'ar' ? 'flex-row-reverse' : ''}`}
+          >
+            {uniqueFormats.map((format: Format) => (
+              <ToggleGroupItem
+                key={format.id}
+                value={format.id}
+                className="rounded-full"
+                aria-label={format[language]}
+              >
+                {format[language]}
+              </ToggleGroupItem>
+            ))}
+          </ToggleGroup>
+        </div>
+
+        <div>
+          <h2 className="text-sm font-medium mb-2">
+            {language === 'en' ? 'Topics' : 'المواضيع'}
+          </h2>
+          <ToggleGroup
+            type="multiple"
+            value={topicFilters}
+            onValueChange={setTopicFilters}
+            className={`flex flex-wrap gap-2 ${language === 'ar' ? 'flex-row-reverse' : ''}`}
+          >
+            {uniqueTopics.map((topic: Topic) => (
+              <ToggleGroupItem
+                key={topic.id}
+                value={topic.id}
+                className="rounded-full"
+                aria-label={topic[language]}
+              >
+                {topic[language]}
+              </ToggleGroupItem>
+            ))}
+          </ToggleGroup>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {filteredSources.map((source, index) => (
+          <a href={source.url} target="_blank" rel="noopener noreferrer" key={index} className="h-full">
+            <Card className="hover:shadow-lg transition-shadow h-full">
+              <CardHeader className="h-full flex flex-col">
+                <div className="flex items-center gap-2">
+                  <CardTitle>{source.title[language]}</CardTitle>
+                </div>
+                <CardDescription className="flex-grow">
+                  {source.description[language]}
+                </CardDescription>
+                <div className="mt-2 flex flex-wrap gap-1">
+                  {source.formats?.map((format: Format) => (
+                    <span key={format.id} className="inline-flex items-center rounded-full bg-muted px-2 py-1 text-xs">
+                      {format[language]}
+                    </span>
+                  ))}
+                  {source.topics?.map((topic: Topic) => (
+                    <span key={topic.id} className="inline-flex items-center rounded-full bg-muted px-2 py-1 text-xs">
+                      {topic[language]}
+                    </span>
+                  ))}
+                </div>
+              </CardHeader>
+            </Card>
+          </a>
+        ))}
+      </div>
     </div>
   );
 }
