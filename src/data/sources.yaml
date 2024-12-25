@@ -516,3 +516,20 @@
     - id: "misc"
       en: "Misc."
       ar: "متنوع"
+
+
+- title:
+    en: "Windy - Weather Data for Syria"
+    ar: "ويندي - بيانات الطقس لسوريا"
+  description:
+    en: "Windy provides real-time weather data and forecasts for Syria, including wind patterns, temperature, precipitation, and other meteorological information. The platform is a useful tool for tracking weather conditions and planning activities."
+    ar: "يوفر موقع ويندي بيانات الطقس في الوقت الفعلي وتوقعات لسوريا، بما في ذلك أنماط الرياح ودرجة الحرارة وهطول الأمطار والمعلومات الجوية الأخرى."
+  url: "https://www.windy.com/?35.277,38.721,7"
+  formats:
+    - id: "visualizations"
+      en: "Visualizations"
+      ar: "رسوم بيانية"
+  topics:
+    - id: "environment"
+      en: "Environment"
+      ar: "البيئة"
