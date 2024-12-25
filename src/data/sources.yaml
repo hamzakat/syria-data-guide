@@ -309,11 +309,11 @@
       ar: "تحقيقات مفتوحة المصدر"
   
 - title:
-    en: "Syria Live Map"
-    ar: "خريطة سوريا الحية"
+    en: "LiveUAMap"
+    ar: "خريطة سوريا مع الأحداث بشكل مباشر"
   description:
     en: "A real-time interactive map providing updates on conflict events, territorial changes, and security incidents in Syria."
-    ar: "خريطة تفاعلية تعرض في الوقت الفعلي أحداث النزاع والتغيرات الإقليمية والحوادث الأمنية في سوريا."
+    ar: "خريطة تفاعلية تعرض في الوقت الفعلي الأحداث والتغيرات الإقليمية والحوادث الأمنية في سوريا."
   url: "https://syria.liveuamap.com/"
   logo: "https://pbs.twimg.com/profile_images/941334986313076736/681FnRJ0_400x400.jpg"
   formats:
