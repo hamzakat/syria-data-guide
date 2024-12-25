@@ -5,6 +5,7 @@
     en: "LandScan HD provides high-resolution global population data at approximately 90 meters, offering detailed population distribution insights."
     ar: "يوفر LandScan HD بيانات سكانية عالمية عالية الدقة بحوالي 90 مترًا، مما يقدم رؤى مفصلة لتوزيع السكان."
   url: "https://landscan.ornl.gov/metadata"
+  logo: "https://pbs.twimg.com/profile_images/1834234578845782016/19lsOOu__400x400.jpg"
   formats:
     - id: "geospatial"
       en: "Geospatial"
@@ -21,6 +22,7 @@
     en: "Provides estimated population counts per grid cell for Syria in 2020, with approximately 100m resolution, aligned with UN population estimates."
     ar: "يوفر تقديرات لعدد السكان لكل خلية شبكية في سوريا لعام 2020، بدقة تقارب 100 متر، متوافقة مع تقديرات الأمم المتحدة السكانية."
   url: "https://hub.worldpop.org/geodata/summary?id=50074"
+  logo: "https://pbs.twimg.com/profile_images/1356154090724716546/Hgvq9o7g_400x400.jpg"
   formats:
     - id: "geospatial"
       en: "Geospatial"
@@ -39,6 +41,7 @@
     en: "Offers population estimates per grid square in Syria for 2020, categorized by age and sex, with approximately 100m resolution."
     ar: "يقدم تقديرات سكانية لكل مربع شبكي في سوريا لعام 2020، مصنفة حسب العمر والجنس، بدقة تقارب 100 متر."
   url: "https://hub.worldpop.org/geodata/summary?id=50545"
+  logo: "https://pbs.twimg.com/profile_images/1356154090724716546/Hgvq9o7g_400x400.jpg"
   formats:
     - id: "geospatial"
       en: "Geospatial"
@@ -50,11 +53,12 @@
 
 - title:
     en: "Syrian Arab Republic - Subnational Administrative Boundaries"
-    ar: "الجمهورية العربية السورية - الحدود الإدارية دون الوطنية"
+    ar: "سوريا - الحدود الإدارية"
   description:
     en: "Contains Syria's administrative boundaries from levels 0 to 4, including names in Arabic and English, and p-codes."
     ar: "يحتوي على الحدود الإدارية لسوريا من المستويات 0 إلى 4، بما في ذلك الأسماء بالعربية والإنجليزية، والأكواد المرجعية."
   url: "https://data.humdata.org/dataset/cod-ab-syr"
+
   formats:
     - id: "geospatial"
       en: "Geospatial"
@@ -71,6 +75,7 @@
     en: "The official statistical bureau of Syria, providing data on demographics, economics, and various national indicators."
     ar: "المكتب الرسمي للإحصاء في سوريا، يقدم بيانات عن الديموغرافيا والاقتصاد ومؤشرات وطنية متنوعة."
   url: "http://cbssyr.sy/index-EN.htm"
+
   formats:
     - id: "stats"
       en: "Statistics & Indicators"
@@ -88,11 +93,12 @@
 
 - title:
     en: "World Bank Group Indicators (Syrian Arab Republic)"
-    ar: "مؤشرات مجموعة البنك الدولي (الجمهورية العربية السورية)"
+    ar: "مؤشرات مجموعة البنك الدولي (سوريا)"
   description:
     en: "Provides a comprehensive set of economic, social, and demographic indicators for Syria, aiding in data-driven decision-making."
     ar: "يوفر مجموعة شاملة من المؤشرات الاقتصادية والاجتماعية والديموغرافية لسوريا، مما يساعد في اتخاذ القرارات المستندة إلى البيانات."
   url: "https://data.worldbank.org/country/syrian-arab-republic"
+  logo: "https://pbs.twimg.com/profile_images/1814204490595115008/kwjZ8C7I_400x400.jpg"
   formats:
     - id: "stats"
       en: "Statistics & Indicators"
@@ -115,6 +121,7 @@
     en: "Offers data and information on the regional response to the Syria refugee crisis, facilitating coordination among humanitarian agencies."
     ar: "يوفر بيانات ومعلومات حول الاستجابة الإقليمية لأزمة اللاجئين السوريين، مما يسهل التنسيق بين الوكالات الإنسانية."
   url: "https://data.unhcr.org/en/situations/syria"
+  logo: "https://pbs.twimg.com/profile_images/1179383498681008131/YMYtT4Mh_400x400.jpg"
   formats:
     - id: "reports"
       en: "Reports"
@@ -134,6 +141,7 @@
     en: "A platform providing a wide range of datasets related to the humanitarian situation in Syria, supporting relief efforts."
     ar: "منصة توفر مجموعة واسعة من مجموعات البيانات المتعلقة بالوضع الإنساني في سوريا، تدعم جهود الإغاثة."
   url: "https://data.humdata.org/group/syr"
+  logo: "https://pbs.twimg.com/profile_images/1844494798347993166/2dkuui1u_400x400.jpg"
   formats:
     - id: "geospatial"
       en: "Geospatial"
@@ -159,6 +167,7 @@
     en: "A platform dedicated to documenting human rights violations and events in Syria using open-source investigations and verified reports."
     ar: "منصة مخصصة لتوثيق انتهاكات حقوق الإنسان والأحداث في سوريا باستخدام التحقيقات المفتوحة المصدر والتقارير الموثقة."
   url: "https://syrianarchive.org"
+  logo: "https://pbs.twimg.com/profile_images/1831723654121447425/eKRUCvCb_400x400.jpg"
   formats:
     - id: "reports"
       en: "Reports"
@@ -182,6 +191,7 @@
     en: "An organization conducting open-source investigations into networks, events, and incidents in Syria, promoting transparency and accountability."
     ar: "منظمة تقوم بإجراء تحقيقات مفتوحة المصدر حول الشبكات والأحداث والحوادث في سوريا، لتعزيز الشفافية والمساءلة."
   url: "https://opensyr.com/"
+  logo: "https://pbs.twimg.com/profile_images/1446184071760072716/XGqsOQo1_400x400.jpg"
   formats:
     - id: "reports"
       en: "Reports"
@@ -208,6 +218,7 @@
     en: "A volunteer organization conducting search and rescue, emergency response, and humanitarian assistance during crises in Syria."
     ar: "منظمة تطوعية تقوم بعمليات البحث والإنقاذ والاستجابة الطارئة وتقديم المساعدات الإنسانية أثناء الأزمات في سوريا."
   url: "https://whitehelmets.org/"
+  logo: "https://pbs.twimg.com/profile_images/876043826883899394/Z12NeA12_400x400.jpg"
   formats:
     - id: "reports"
       en: "Reports"
@@ -224,6 +235,7 @@
     en: "Research and insights focused on social cohesion challenges among Syrians, offering recommendations to foster unity and understanding."
     ar: "أبحاث ورؤى تركز على تحديات الانسجام الاجتماعي بين السوريين، مع تقديم توصيات لتعزيز الوحدة والتفاهم."
   url: "https://sydialogue.org/"
+  logo: "https://pbs.twimg.com/profile_images/934351071266394112/bRDOQ3NW_400x400.jpg"
   formats:
     - id: "reports"
       en: "Reports"
@@ -238,11 +250,12 @@
 
 - title:
     en: "ReliefWeb – Syrian Arab Republic Updates"
-    ar: "ريليف ويب – مستجدات الجمهورية العربية السورية"
+    ar: "ريليف ويب – مستجدات سوريا"
   description:
     en: "A humanitarian information platform providing updates, reports, and analysis on the humanitarian situation in Syria."
     ar: "منصة معلومات إنسانية تقدم تحديثات وتقارير وتحليلات حول الوضع الإنساني في سوريا."
   url: "https://reliefweb.int/updates?list=Syrian%20Arab%20Republic%20Updates&advanced-search=%28PC226%29"
+  logo: "https://reliefweb.int/themes/custom/common_design_subtheme/img/logos/rw-logo-desktop.svg"
   formats:
     - id: "reports"
       en: "Reports"
@@ -265,6 +278,7 @@
     en: "Offers analysis and research on governance, politics, and socio-economic challenges in Syria, aiming to inform policy decisions."
     ar: "يقدم تحليلات وأبحاثًا حول الحوكمة والسياسة والتحديات الاجتماعية والاقتصادية في سوريا بهدف دعم القرارات السياسية."
   url: "https://carnegieendowment.org/regions/syria?lang=ar&center=middle-east"
+  logo: "https://pbs.twimg.com/profile_images/1376596546104520705/7M3nCeaX_400x400.jpg"
   formats:
     - id: "reports"
       en: "Reports"
@@ -281,6 +295,7 @@
     en: "A platform specializing in open-source investigations using digital forensics and geospatial analysis to verify conflicts and expose disinformation."
     ar: "منصة متخصصة في التحقيقات المفتوحة المصدر باستخدام الأدلة الرقمية والتحليل الجغرافي للتحقق من النزاعات وكشف التضليل الإعلامي."
   url: "https://www.bellingcat.com/category/news/?fwp_tags=syria"
+  logo: "https://pbs.twimg.com/profile_images/615058568300097536/WpTJfNg3_400x400.png"
   formats:
     - id: "reports"
       en: "Reports"
@@ -300,6 +315,7 @@
     en: "A real-time interactive map providing updates on conflict events, territorial changes, and security incidents in Syria."
     ar: "خريطة تفاعلية تعرض في الوقت الفعلي أحداث النزاع والتغيرات الإقليمية والحوادث الأمنية في سوريا."
   url: "https://syria.liveuamap.com/"
+  logo: "https://pbs.twimg.com/profile_images/941334986313076736/681FnRJ0_400x400.jpg"
   formats:
     - id: "geospatial"
       en: "Geospatial"
@@ -319,6 +335,7 @@
     en: "Data and analysis on political violence, conflict events, and protest activities with geospatial coordinates and temporal details."
     ar: "بيانات وتحليلات حول العنف السياسي وأحداث النزاع والاحتجاجات، تتضمن إحداثيات جغرافية وتفاصيل زمنية."
   url: "https://acleddata.com/middle-east/"
+  logo: "https://pbs.twimg.com/profile_images/1826556265058742272/44mYF7l6_400x400.jpg"
   formats:
     - id: "geospatial"
       en: "Geospatial"
@@ -347,6 +364,7 @@
     en: "Economic and business news, analysis, and data on Syria’s financial and market environment."
     ar: "أخبار وتحليلات اقتصادية وتجارية وبيانات حول البيئة المالية والأسواق في سوريا."
   url: "http://syria-report.com/"
+  logo: "https://pbs.twimg.com/profile_images/1708066907096580096/pxfdzSkA_400x400.jpg"
   formats:
     - id: "reports"
       en: "Reports"
@@ -366,6 +384,7 @@
     en: "Migration data, resources, and analysis focusing on displacement, population movements, and humanitarian needs in Syria."
     ar: "بيانات وموارد حول الهجرة وتحليلات تركز على النزوح وحركات السكان والاحتياجات الإنسانية في سوريا."
   url: "https://syria.iom.int/data-and-resources"
+  logo: "https://pbs.twimg.com/profile_images/922642942581399552/x-cJajWc_400x400.jpg"
   formats:
     - id: "reports"
       en: "Reports"
@@ -388,6 +407,7 @@
     en: "A digital archive preserving Syria’s cultural heritage, historical documents, and collective memory."
     ar: "أرشيف رقمي يحفظ التراث الثقافي السوري والوثائق التاريخية والذاكرة الجماعية."
   url: "https://syrianmemory.org/"
+  logo: "https://pbs.twimg.com/profile_images/1653474286823194645/iKQGgbfB_400x400.jpg"
   formats:
     - id: "reports"
       en: "Reports"
@@ -405,11 +425,12 @@
 
 - title:
     en: "Our World in Data – Syria"
-    ar: "عالمنا في البيانات – سوريا"
+    ar: "Our World in Data – Syria"
   description:
     en: "A comprehensive and interactive data portal offering visualizations and analyses on a wide range of indicators, including demographics, health, economy, and more in Syria."
     ar: "بوابة بيانات تفاعلية شاملة تقدم رسوم بيانية وتحليلات حول طيف واسع من المؤشرات في سوريا، بما في ذلك السكان والصحة والاقتصاد وغيرها."
   url: "https://ourworldindata.org/country/syria"
+  logo: "https://pbs.twimg.com/profile_images/1235299549637496832/qiK2pu1-_400x400.jpg"
   formats:
     - id: "stats"
       en: "Statistics & Indicators"
@@ -435,8 +456,8 @@
   description:
     en: "Jusoor for Studies is an independent research institution dedicated to enhancing understanding of the political, economic, and social dynamics affecting Syria and the region. It provides in-depth analyses and reports to inform policymakers and the public."
     ar: "مركز جسور للدراسات هو مؤسسة بحثية مستقلة تهدف إلى تعزيز الفهم للديناميكيات السياسية والاقتصادية والاجتماعية التي تؤثر على سوريا والمنطقة. يقدم تحليلات وتقارير معمقة لإفادة صناع القرار والجمهور."
- 
   url: "https://jusoor.co/ar"
+  logo: "https://pbs.twimg.com/profile_images/1451225232124096514/WB7LPSSf_400x400.jpg"
   formats:
     - id: "reports"
       en: "Reports"
@@ -461,13 +482,12 @@
   description:
     en: "The Middle East Institute's Syria Program offers comprehensive research and analysis on Syria's multifaceted crises, covering political, economic, legal, social, ethnic, and religious dynamics. It aims to inform policy discussions and provide insights into Syria's current situation and future prospects."
     ar: "يقدم برنامج سوريا في معهد الشرق الأوسط أبحاثًا وتحليلات شاملة حول الأزمات المتعددة في سوريا، تشمل الديناميكيات السياسية والاقتصادية والقانونية والاجتماعية والإثنية والدينية. يهدف إلى إثراء النقاشات السياسية وتقديم رؤى حول الوضع الحالي والمستقبلي لسوريا."
- 
   url: "https://www.mei.edu/programs/syria-program"
+  logo: "https://pbs.twimg.com/profile_images/1172587338574303239/EPHqHrnf_400x400.jpg"
   formats:
     - id: "reports"
       en: "Reports"
       ar: "تقارير"
-
   topics:
     - id: "conflicts"
       en: "Conflicts"
@@ -483,13 +503,12 @@
   description:
     en: "The Washington Institute for Near East Policy conducts in-depth research on social, political, and economic developments in the Arab world, with a focus on the Levant, including Syria. It provides policy analysis to inform U.S. policymakers and the broader public."
     ar: "يقوم معهد واشنطن لسياسات الشرق الأدنى بأبحاث معمقة حول التطورات الاجتماعية والسياسية والاقتصادية في العالم العربي، مع تركيز خاص على بلاد الشام، بما في ذلك سوريا. يقدم تحليلات سياسية لإفادة صناع القرار الأمريكيين والجمهور العام."
-
   url: "https://www.washingtoninstitute.org/policy-analysis/syria"
+  logo: "https://pbs.twimg.com/profile_images/1347596689159450630/sfp-Mh0U_400x400.jpg"
   formats:
     - id: "reports"
       en: "Reports"
       ar: "تقارير"
-
   topics:
     - id: "conflicts"
       en: "Conflicts"
@@ -505,13 +524,12 @@
   description:
     en: "Kaggle offers a collection of datasets related to Syria, encompassing various topics such as demographics, conflict data, and economic indicators. These datasets can be used for data analysis and machine learning projects."
     ar: "يوفر موقع Kaggle مجموعة من البيانات المتعلقة بسوريا، تشمل مواضيع متنوعة مثل الديموغرافيا وبيانات النزاعات والمؤشرات الاقتصادية. يمكن استخدام هذه البيانات في تحليل البيانات ومشاريع تعلم الآلة."
- 
   url: "https://www.kaggle.com/datasets?search=syria"
+  logo: "https://pbs.twimg.com/profile_images/1573129499343978498/03a7wgfE_400x400.jpg"
   formats:
     - id: "raw"
       en: "Raw"
       ar: "بيانات خام"
-
   topics:
     - id: "misc"
       en: "Misc."
@@ -525,6 +543,7 @@
     en: "Windy provides real-time weather data and forecasts for Syria, including wind patterns, temperature, precipitation, and other meteorological information. The platform is a useful tool for tracking weather conditions and planning activities."
     ar: "يوفر موقع ويندي بيانات الطقس في الوقت الفعلي وتوقعات لسوريا، بما في ذلك أنماط الرياح ودرجة الحرارة وهطول الأمطار والمعلومات الجوية الأخرى."
   url: "https://www.windy.com/?35.277,38.721,7"
+  logo: "https://pbs.twimg.com/profile_images/1764179549409931264/by0X2lQY_400x400.jpg"
   formats:
     - id: "visualizations"
       en: "Visualizations"
@@ -533,3 +552,46 @@
     - id: "environment"
       en: "Environment"
       ar: "البيئة"
+
+- title:
+    en: "The Syrian Observer"
+    ar: "المراقب السوري"
+  description:
+    en: "The Syrian Observer is a news website providing daily updates, news articles, and opinion pieces focused on Syria. It covers political, economic, and social developments, offering insights into the country's current affairs."
+    ar: "المراقب السوري هو موقع إخباري يقدم تحديثات يومية ومقالات إخبارية وآراء تركز على سوريا. يغطي التطورات السياسية والاقتصادية والاجتماعية، ويوفر رؤى حول الشؤون الحالية في البلاد."
+  url: "https://syrianobserver.com"
+  logo: "https://pbs.twimg.com/profile_images/344513261568193800/99c25ecc4ab3e8144ed0ed021e0fabff_400x400.png"
+  formats:
+    - id: "reports"
+      en: "Reports"
+      ar: "تقارير"
+  topics:
+    - id: "policy-analysis"
+      en: "Policy Analysis"
+      ar: "تحليلات سياسية"
+    - id: "society"
+      en: "Society"
+      ar: "المجتمع"
+
+- title:
+    en: "Syrian Network for Human Rights (SNHR)"
+    ar: "الشبكة السورية لحقوق الإنسان"
+  description:
+    en: "The Syrian Network for Human Rights (SNHR) is an independent, non-governmental organization documenting human rights violations in Syria. It publishes detailed reports and statistics to raise awareness and support accountability efforts for victims of the conflict."
+    ar: "الشبكة السورية لحقوق الإنسان هي منظمة مستقلة غير حكومية تعمل على توثيق انتهاكات حقوق الإنسان في سوريا. تنشر تقارير مفصلة وإحصاءات لزيادة الوعي ودعم جهود المحاسبة لضحايا النزاع."
+  url: "https://snhr.org"
+  logo: "https://pbs.twimg.com/profile_images/1827993563314966528/hNrGVt6P_400x400.png"
+  formats:
+    - id: "reports"
+      en: "Reports"
+      ar: "تقارير"
+    - id: "stats"
+      en: "Statistics & Indicators"
+      ar: "احصائيات ومؤشرات"
+    - id: "visualizations"
+      en: "Visualizations"
+      ar: "رسوم بيانية"
+  topics:
+    - id: "humanitarian"
+      en: "Humanitarian"
+      ar: "إنسانية"

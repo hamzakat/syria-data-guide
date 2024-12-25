@@ -31,6 +31,7 @@ interface Source {
     ar: string;
   };
   url: string;
+  logo?: string;
   formats?: Format[];
   topics?: Topic[];
 }
@@ -77,6 +78,15 @@ export default function Home() {
           <h1 className="text-3xl font-bold">
             {language === 'en' ? 'Syria Data Guide' : 'دليل البيانات السورية'}
           </h1>
+          <a href="https://github.com/hamzakat/syria-data-guide" target="_blank" rel="noopener noreferrer" className="flex items-center">
+            <Image 
+              src="/github.svg"
+              alt="GitHub Repository" 
+              width={30} 
+              height={30} 
+              className="inline-block ml-2"
+            />
+          </a>
         </div>
         <div className="grid grid-cols-2 gap-2 sm:flex sm:items-center sm:gap-4">
           <Dialog>
@@ -85,9 +95,9 @@ export default function Home() {
                 {language === 'en' ? 'About' : 'حول'}
               </Button>
             </DialogTrigger>
-            <DialogContent>
+            <DialogContent dir={language === 'ar' ? 'rtl' : 'ltr'}>
               <DialogHeader>
-                <DialogTitle className="font-ibm-plex-sans-arabic">
+                <DialogTitle className={`font-ibm-plex-sans-arabic ${language === 'ar' ? 'text-right' : ''}`}>
                   {language === 'en' ? 'About' : 'حول'}
                 </DialogTitle>
               </DialogHeader>
@@ -95,7 +105,7 @@ export default function Home() {
                 {language === 'en' 
                   ? <>
                       <DialogDescription>
-                        A comprehensive guide offering diverse data sources on Syria, including demographics, geography, statistics, and research reports that helps decision-makers and researchers.
+                      A comprehensive guide providing data sources, statistics, and research reports on various topics related to Syrian affairs to assist decision-makers and researchers.
                       </DialogDescription>
                       <DialogDescription>
                         This is an open source project. You can view the source code and contribute on <a href="https://github.com/hamzakat/syria-data-guide" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">GitHub</a>.
@@ -103,7 +113,7 @@ export default function Home() {
                     </>
                   : <>
                       <DialogDescription className="font-ibm-plex-sans-arabic">
-                        دليل شامل يوفر مصادر بيانات متنوعة حول سوريا، تشمل الديموغرافيا والجغرافيا والإحصاءات والتقارير البحثية التي تساعد صناع القرار والباحثين.
+                        دليل شامل يوفر مصادر بيانات وإحصائيات وتقارير البحثية حول مواضيع المتنوعة متعلقة بالشأن السوري لمساعدة صناع القرار والباحثين.
                       </DialogDescription>
                       <DialogDescription className="font-ibm-plex-sans-arabic">
                         هذا مشروع مفتوح المصدر. يمكنك عرض الكود المصدري والمساهمة على <a href="https://github.com/hamzakat/syria-data-guide" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">GitHub</a>.
@@ -125,7 +135,7 @@ export default function Home() {
       <div className="space-y-4 mb-6">
         <div>
           <h2 className="text-sm font-medium mb-2">
-            {language === 'en' ? 'Data Format' : 'الصيغة'}
+            {language === 'en' ? 'Format' : 'الصيغة'}
           </h2>
           <ToggleGroup
             type="multiple"
@@ -148,7 +158,7 @@ export default function Home() {
 
         <div>
           <h2 className="text-sm font-medium mb-2">
-            {language === 'en' ? 'Topics' : 'المواضيع'}
+            {language === 'en' ? 'Topic' : 'الموضوع'}
           </h2>
           <ToggleGroup
             type="multiple"
@@ -176,6 +186,15 @@ export default function Home() {
             <Card className="hover:shadow-lg transition-shadow h-full">
               <CardHeader className="h-full flex flex-col">
                 <div className="flex items-center gap-2">
+                  {source.logo && (
+                    <Image 
+                      src={source.logo} 
+                      alt={`${source.title[language]} logo`} 
+                      width={80} 
+                      height={80} 
+                      className="rounded"
+                    />
+                  )}
                   <CardTitle>{source.title[language]}</CardTitle>
                 </div>
                 <CardDescription className="flex-grow">
