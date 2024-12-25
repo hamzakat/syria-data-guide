@@ -78,13 +78,27 @@ export default function Home() {
                 <DialogTitle>
                   {language === 'en' ? 'About' : 'حول'}
                 </DialogTitle>
-                <DialogDescription>
-                  {language === 'en' 
-                    ? 'Syria Data Guide is a comprehensive directory of data sources about Syria, including demographic, geographic, and statistical data, and reports published by institutes and think tanks.'
-                    : 'دليل شامل لمصادر البيانات حول سوريا، بما في ذلك البيانات الديموغرافية والجغرافية والإحصائية والتقارير الصادرة عن المراكز البحثية.'
-                  }
-                </DialogDescription>
               </DialogHeader>
+              <div className="space-y-2">
+                {language === 'en' 
+                  ? <>
+                      <DialogDescription>
+                        Syria Data Guide is a key platform offering diverse data sources on Syria, including demographics, geography, statistics, and research reports that helps decision-makers and researchers.
+                      </DialogDescription>
+                      <DialogDescription>
+                        This is an open source project. You can view the source code and contribute on <a href="https://github.com/hamzakat/syria-data-guide" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">GitHub</a>.
+                      </DialogDescription>
+                    </>
+                  : <>
+                      <DialogDescription>
+                        منصة أساسية توفر مصادر بيانات متنوعة حول سوريا، تشمل الديموغرافيا والجغرافيا والإحصاءات والتقارير البحثية التي تساعد صناع القرار والباحثين.
+                      </DialogDescription>
+                      <DialogDescription>
+                        هذا مشروع مفتوح المصدر. يمكنك عرض الكود المصدري والمساهمة على <a href="https://github.com/hamzakat/syria-data-guide" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">GitHub</a>.
+                      </DialogDescription>
+                    </>
+                }
+              </div>
             </DialogContent>
           </Dialog>
           <Button 
