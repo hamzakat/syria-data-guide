@@ -87,7 +87,7 @@ export default function Home() {
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>
+                <DialogTitle className="font-ibm-plex-sans-arabic">
                   {language === 'en' ? 'About' : 'حول'}
                 </DialogTitle>
               </DialogHeader>
@@ -102,10 +102,10 @@ export default function Home() {
                       </DialogDescription>
                     </>
                   : <>
-                      <DialogDescription>
+                      <DialogDescription className="font-ibm-plex-sans-arabic">
                         منصة أساسية توفر مصادر بيانات متنوعة حول سوريا، تشمل الديموغرافيا والجغرافيا والإحصاءات والتقارير البحثية التي تساعد صناع القرار والباحثين.
                       </DialogDescription>
-                      <DialogDescription>
+                      <DialogDescription className="font-ibm-plex-sans-arabic">
                         هذا مشروع مفتوح المصدر. يمكنك عرض الكود المصدري والمساهمة على <a href="https://github.com/hamzakat/syria-data-guide" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">GitHub</a>.
                       </DialogDescription>
                     </>
