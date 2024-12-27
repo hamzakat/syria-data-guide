@@ -1,18 +1,15 @@
-import dotenv from 'dotenv';
-import { fetchSourcesFromSheet } from '../src/lib/sheets';
-import fs from 'fs/promises';
-import path from 'path';
-
+const dotenv = require('dotenv');
+const { fetchSourcesFromSheet } = require('../src/lib/sheets');
+const fs = require('fs/promises');
+const path = require('path');
 
 dotenv.config();
 
 async function generateSourcesData() {
   try {
     const sources = await fetchSourcesFromSheet();  
-    // Create the data directory if it doesn't exist
     await fs.mkdir(path.join(process.cwd(), 'src', 'data'), { recursive: true });
     
-    // Write the data to a JSON file
     await fs.writeFile(
       path.join(process.cwd(), 'src', 'data', 'sources.json'),
       JSON.stringify(sources, null, 2)
