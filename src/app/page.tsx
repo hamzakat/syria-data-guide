@@ -4,10 +4,12 @@ import { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from '@/contexts/LanguageContext';
-import sources from '@/data/sources.yaml';
+// import sources from '@/data/sources.json';
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import Image from 'next/image';
+
+import { getSources } from '@/lib/data';
 
 interface Format {
   id: string;
@@ -36,7 +38,13 @@ interface Source {
   topics?: Topic[];
 }
 
-export default function Home() {
+export const dynamic = 'force-static';
+
+
+
+
+export default  function Home() {
+  const sources = getSources();
   const { language, setLanguage, dir } = useLanguage();
   const [formatFilters, setFormatFilters] = useState<string[]>([]);
   const [topicFilters, setTopicFilters] = useState<string[]>([]);
