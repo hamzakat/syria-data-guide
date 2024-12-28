@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
  
+
+@layer components {
+  /* Add styles for dialog content scrolling */
+  .dialog-content-scroll {
+    @apply max-h-[80vh] overflow-y-auto;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -13,7 +21,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
  
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 0 0% 0%;
     --primary-foreground: 210 40% 98%;
  
     --secondary: 210 40% 96.1%;
@@ -81,4 +89,31 @@
 
 .font-ibm-plex-sans-arabic {
   font-family: var(--font-ibm-plex-sans-arabic);
+}
+
+/* Custom scrollbar styles */
+.dialog-content-scroll {
+  @apply max-h-[80vh] overflow-y-auto;
+  
+  /* Create padding for scrollbar to prevent overlay */
+  @apply pr-2 mr-2;
+  
+  /* For Webkit browsers (Chrome, Safari) */
+  &::-webkit-scrollbar {
+    @apply w-[6px];
+  }
+  
+  &::-webkit-scrollbar-track {
+    @apply bg-transparent;
+    margin: 0.5rem 0; /* Add some space at top and bottom */
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full hover:bg-muted-foreground/50 transition-colors;
+    border-radius: 8px;
+  }
+
+  /* For Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--muted-foreground)/0.3) transparent;
 }

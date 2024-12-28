@@ -1,16 +1,27 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
+import { JWT } from 'google-auth-library';
+
 
 export async function fetchSourcesFromSheet() {
-    if (!process.env.GOOGLE_SHEET_ID || !process.env.GOOGLE_API_KEY) {
-        throw new Error('Missing required environment variables: GOOGLE_SHEET_ID or GOOGLE_API_KEY');
-    }
+  if (!process.env.GOOGLE_SHEET_ID || 
+      !process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || 
+      !process.env.GOOGLE_PRIVATE_KEY) {
+      throw new Error('Missing required environment variables');
+  }
 
-    const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID!, {
-      apiKey: process.env.GOOGLE_API_KEY!
-    });
-    await doc.loadInfo();
-    const sheet = doc.sheetsByTitle["Sources"];
-    const rows = await sheet.getRows();
+  const serviceAccountAuth = new JWT({
+      email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+      key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+      scopes: [
+          'https://www.googleapis.com/auth/spreadsheets.readonly',
+          'https://www.googleapis.com/auth/spreadsheets'
+      ],
+  });
+
+  const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID, serviceAccountAuth);
+  await doc.loadInfo();
+  const sheet = doc.sheetsByTitle["Sources"];
+  const rows = await sheet.getRows();
   
     return rows.map((row) => {
       // Access properties using get() method
