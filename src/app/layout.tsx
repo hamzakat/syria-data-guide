@@ -1,8 +1,8 @@
 import '@/app/globals.css'
-import { Inter, IBM_Plex_Sans_Arabic } from 'next/font/google'
+import { Archivo, IBM_Plex_Sans_Arabic } from 'next/font/google'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 
-const inter = Inter({ subsets: ['latin'] })
+const archivo = Archivo({ subsets: ['latin'], variable: '--font-archivo' });
 const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({ 
   weight: ['400', '500', '600', '700'],
   subsets: ['arabic'],
@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar">
-      <body className={`${inter.className} ${ibmPlexSansArabic.variable}`}>
+      <body className={`${archivo.className} ${ibmPlexSansArabic.variable}`}>
         <LanguageProvider>
           {children}
         </LanguageProvider>

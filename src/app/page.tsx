@@ -257,7 +257,7 @@ export default  function Home() {
             onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
             className="w-full sm:w-auto"
           >
-            {language === 'en' ? 'العربية' : 'English'}
+            {language === "ar" ? "English" : <span className="font-ibm-plex-sans-arabic">العربية</span>}
           </Button>
         </div>
       </div>
