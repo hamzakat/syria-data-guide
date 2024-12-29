@@ -216,16 +216,18 @@ export default  function Home() {
 
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6">
           <div className="flex items-center gap-2 mb-4 sm:mb-0 justify-center sm:justify-start">
-            <Image 
-              src="/flag.svg" 
-              alt="Syrian Flag" 
-              width={32} 
-              height={24} 
-              className="inline-block"
-            />
             <h1 className="text-3xl font-bold text-primary">
-              {language === 'en' ? 'Syria Data Guide' : 'دليل البيانات السورية'}
+              {language === 'en' ? 'Syria Data Guide' : 'دليل بيانات سوريا'}
             </h1>
+            <a href="https://github.com/hamzakat/syria-data-guide" target="_blank" rel="noopener noreferrer" className="flex items-center">
+              <Image 
+                src="/github.svg"
+                alt="GitHub Repository" 
+                width={25} 
+                height={25} 
+                className="inline-block"
+              />
+            </a>
           </div>
           <div className="grid grid-cols-2 gap-2 sm:flex sm:items-center sm:gap-4">
             <Dialog>
@@ -277,7 +279,7 @@ export default  function Home() {
         <div className="space-y-4 mb-6">
           <div>
             <h2 className="text-sm font-medium mb-2">
-              {language === 'en' ? 'Format' : 'الصيغة'}
+              {language === 'en' ? 'Select Format' : 'اختر الصيغة'}
             </h2>
             <ToggleGroup
               type="multiple"
@@ -299,7 +301,7 @@ export default  function Home() {
           </div>
           <div>
             <h2 className="text-sm font-medium mb-2">
-              {language === 'en' ? 'Topic' : 'الموضوع'}
+              {language === 'en' ? 'Select Topic' : 'اختر الموضوع'}
             </h2>
             <ToggleGroup
               type="multiple"
@@ -379,21 +381,22 @@ export default  function Home() {
                 className={`sm:max-w-[500px] dialog-content-scroll ${language === 'ar' ? '[&>button]:left-4 [&>button]:right-auto' : ''}`}
                 dir={language === 'ar' ? 'rtl' : 'ltr'}
               >
-                <DialogHeader>
-                  <DialogTitle className={language === 'ar' ? 'font-ibm-plex-sans-arabic text-right' : ''}>
-                    {language === 'en' ? 'Propose a New Data Source' : 'اقترح مصدر بيانات جديد'}
-                  </DialogTitle>
-                  <DialogDescription className={language === 'ar' ? 'font-ibm-plex-sans-arabic text-right' : ''}>
-                    {language === 'en' 
-                      ? 'Fill in the details about the data source you would like to propose.'
-                      : 'املأ تفاصيل مصدر البيانات الذي تريد اقتراحه.'}
-                  </DialogDescription>
-                </DialogHeader>
+     
                 
                   {isSuccess ? (
                     <SuccessMessage />
                   ) : (
-                    
+                    <>
+                    <DialogHeader>
+                      <DialogTitle className={language === 'ar' ? 'font-ibm-plex-sans-arabic text-right' : ''}>
+                        {language === 'en' ? 'Propose a New Data Source' : 'اقترح مصدر بيانات جديد'}
+                      </DialogTitle>
+                      <DialogDescription className={language === 'ar' ? 'font-ibm-plex-sans-arabic text-right' : ''}>
+                        {language === 'en' 
+                          ? 'Fill in the details about the data source you would like to propose.'
+                          : 'املأ تفاصيل مصدر البيانات الذي تريد اقتراحه.'}
+                      </DialogDescription>
+                    </DialogHeader>
                     <form 
                       className={`space-y-4 ${language === 'ar' ? 'font-ibm-plex-sans-arabic text-right' : ''}`} 
                       onSubmit={handleSubmit}
@@ -423,7 +426,7 @@ export default  function Home() {
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium">
-                        {language === 'en' ? 'Format' : 'الصيغة'}
+                        {language === 'en' ? 'Select Format' : 'اختر الصيغة'}
                       </label>
                       <ToggleGroup
                         type="multiple"
@@ -463,7 +466,7 @@ export default  function Home() {
 
                     <div className="space-y-2">
                       <label className="text-sm font-medium">
-                        {language === 'en' ? 'Topic' : 'الموضوع'}
+                        {language === 'en' ? 'Select Topic' : 'اختر الموضوع'}
                       </label>
                       <ToggleGroup
                         type="multiple"
@@ -544,7 +547,8 @@ export default  function Home() {
                       </Button>
                     </div>
                   </form>
-                  
+                  </>
+
                 )}
               
             </DialogContent>
@@ -554,12 +558,13 @@ export default  function Home() {
         
       
         <div className="flex justify-center mt-6">
-          <a href="https://github.com/hamzakat/syria-data-guide" target="_blank" rel="noopener noreferrer" className="flex items-center">
+
+          <a href="https://syriadata.net" target="_blank" rel="noopener noreferrer" className="flex items-center">
             <Image 
-              src="/github.svg"
-              alt="GitHub Repository" 
-              width={30} 
-              height={30} 
+              src="/logo-black.png"
+              alt="Syria Data" 
+              width={140} 
+              height={140} 
               className="inline-block"
             />
           </a>
