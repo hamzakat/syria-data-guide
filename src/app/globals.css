@@ -117,3 +117,7 @@
   scrollbar-width: thin;
   scrollbar-color: hsl(var(--muted-foreground)/0.3) transparent;
 }
+
+.notification-bar {
+  @apply bg-muted text-foreground py-2 text-center;
+}
