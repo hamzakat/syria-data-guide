@@ -8,6 +8,7 @@ import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, Dialog
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import Image from 'next/image';
 import { getSources } from '@/lib/data';
+import { submitToSheet } from '@/lib/clientSheets';
 
 interface Format {
   id: string;
@@ -58,9 +59,7 @@ export default  function Home() {
     setIsSubmitting(true);
     console.log('Submitting form...');
     
-    // Store form reference
     const form = e.target as HTMLFormElement;
-    
     const formData = new FormData(form);
     
     const formats = selectedFormats.map(format => 
@@ -80,29 +79,16 @@ export default  function Home() {
     };
     
     try {
-      console.log('Sending request with data:', data);
-      const response = await fetch('/api/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-  
-      if (!response.ok) {
-        throw new Error('Failed to submit');
-      }
-  
+      console.log('Sending data:', data);
+      await submitToSheet(data);
       console.log('Submission successful');
       
-      // Reset all states
       setIsSuccess(true);
       setSelectedFormats([]);
       setSelectedTopics([]);
       setShowOtherFormat(false);
       setShowOtherTopic(false);
       
-      // Safely reset the form
       try {
         form.reset();
         console.log('Form reset successful');
