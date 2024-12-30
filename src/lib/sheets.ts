@@ -3,22 +3,22 @@ import { JWT } from 'google-auth-library';
 
 
 export async function fetchSourcesFromSheet() {
-  if (!process.env.GOOGLE_SHEET_ID || 
-      !process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || 
-      !process.env.GOOGLE_PRIVATE_KEY) {
+  if (!process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID || 
+      !process.env.NEXT_PUBLIC_GOOGLE_SERVICE_ACCOUNT_EMAIL || 
+      !process.env.NEXT_PUBLIC_GOOGLE_PRIVATE_KEY) {
       throw new Error('Missing required environment variables');
   }
 
   const serviceAccountAuth = new JWT({
-      email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+      email: process.env.NEXT_PUBLIC_GOOGLE_SERVICE_ACCOUNT_EMAIL,
+      key: process.env.NEXT_PUBLIC_GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
       scopes: [
           'https://www.googleapis.com/auth/spreadsheets.readonly',
           'https://www.googleapis.com/auth/spreadsheets'
       ],
   });
 
-  const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID, serviceAccountAuth);
+  const doc = new GoogleSpreadsheet(process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID, serviceAccountAuth);
   await doc.loadInfo();
   const sheet = doc.sheetsByTitle["Sources"];
   const rows = await sheet.getRows();
