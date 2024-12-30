@@ -20,12 +20,13 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
+
       - name: create env file
-      run: |
-        touch .env
-        echo GOOGLE_PRIVATE_KEY=${{ secrets.GOOGLE_PRIVATE_KEY }} >> .env
-        echo GOOGLE_SERVICE_ACCOUNT_EMAIL=${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }} >> .env
-        echo GOOGLE_SHEET_ID=${{ secrets.GOOGLE_SHEET_ID }} >> .env
+        run: |
+          touch .env
+          echo GOOGLE_PRIVATE_KEY=${{ secrets.GOOGLE_PRIVATE_KEY }} >> .env
+          echo GOOGLE_SERVICE_ACCOUNT_EMAIL=${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }} >> .env
+          echo GOOGLE_SHEET_ID=${{ secrets.GOOGLE_SHEET_ID }} >> .env
 
       - name: Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧
         uses: ./.github/workflows/setup-node
