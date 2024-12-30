@@ -219,7 +219,7 @@ export default  function Home() {
             <h1 className="text-3xl font-bold text-primary">
               {language === 'en' ? 'Syria Data Guide' : 'دليل بيانات سوريا'}
             </h1>
-            <a href="https://github.com/hamzakat/syria-data-guide" target="_blank" rel="noopener noreferrer" className="flex items-center">
+            <a href="https://github.com/syriadata/guide" target="_blank" rel="noopener noreferrer" className="flex items-center">
               <Image 
                 src="/github.svg"
                 alt="GitHub Repository" 
