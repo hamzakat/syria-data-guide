@@ -205,7 +205,7 @@ export default  function Home() {
           {language === 'en' ? 'Congrats to Syrians!' : 'مبارك التحرير!'}
         </span>
         <Image
-            src="/flag.svg"
+            src="/guide/flag.svg"
             alt="Flag"
             width={25}
             height={25}
@@ -221,7 +221,7 @@ export default  function Home() {
             </h1>
             <a href="https://github.com/hamzakat/syria-data-guide" target="_blank" rel="noopener noreferrer" className="flex items-center">
               <Image 
-                src="/github.svg"
+                src="/guide/github.svg"
                 alt="GitHub Repository" 
                 width={25} 
                 height={25} 
@@ -561,7 +561,7 @@ export default  function Home() {
 
           <a href="https://syriadata.net" target="_blank" rel="noopener noreferrer" className="flex items-center">
             <Image 
-              src="/logo-black.png"
+              src="/guide/logo-black.png"
               alt="Syria Data" 
               width={140} 
               height={140} 
