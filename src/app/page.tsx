@@ -8,7 +8,6 @@ import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, Dialog
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import Image from 'next/image';
 import { getSources } from '@/lib/data';
-import { submitToSheet } from '@/lib/sheets';
 
 interface Format {
   id: string;
@@ -80,9 +79,19 @@ export default  function Home() {
     
     try {
       console.log('Sending data:', data);
-      await submitToSheet(data);
+      const response = await fetch('https://syriadata-guide-submit-api.vercel.app/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',          
+        },
+        body: JSON.stringify(data)
+      });
+  
+      if (!response.ok) {
+        throw new Error('Submission failed');
+      }
+  
       console.log('Submission successful');
-      
       setIsSuccess(true);
       setSelectedFormats([]);
       setSelectedTopics([]);
@@ -103,7 +112,6 @@ export default  function Home() {
       setIsSubmitting(false);
     }
   };
-  
 
   const handleDialogClose = () => {
     setDialogOpen(false);
