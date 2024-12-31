@@ -273,7 +273,11 @@ export default  function Home() {
         <div className="space-y-4 mb-6">
           <div>
             <h2 className="text-sm font-medium mb-2">
-              {language === 'en' ? 'Select Format' : 'اختر الصيغة'}
+              {language === 'en' ? (
+                <>Select Format <span className="text-muted-foreground">(you can select multiple items)</span></>
+              ) : (
+                <>اختر الصيغة <span className="text-muted-foreground">(يمكنك اختيار أكثر من بند)</span></>
+              )}
             </h2>
             <ToggleGroup
               type="multiple"
@@ -295,7 +299,11 @@ export default  function Home() {
           </div>
           <div>
             <h2 className="text-sm font-medium mb-2">
-              {language === 'en' ? 'Select Topic' : 'اختر الموضوع'}
+              {language === 'en' ? (
+                <>Select Topic <span className="text-muted-foreground">(you can select multiple items)</span></>
+              ) : (
+                <>اختر الموضوع <span className="text-muted-foreground">(يمكنك اختيار أكثر من بند)</span></>
+              )}
             </h2>
             <ToggleGroup
               type="multiple"
@@ -397,18 +405,26 @@ export default  function Home() {
                     >
                       <div className="space-y-2">
                         <label className={`text-sm font-medium ${language === 'ar' ? 'font-ibm-plex-sans-arabic' : ''}`}>
-                          {language === 'en' ? 'Email (optional, for contacting you)' : 'البريد الإلكتروني (اختياري، للتواصل معك)'}
+                          {language === 'en' ? (
+                            <>Email <span className="text-muted-foreground">(optional, for contacting you)</span></>
+                          ) : (
+                            <>البريد الإلكتروني <span className="text-muted-foreground">(اختياري، للتواصل معك)</span></>
+                          )}
                         </label>
                         <input
                           type="email"
                           name="email"
                           className="w-full rounded-md border p-2"
-                          placeholder={language === 'en' ? 'your@email.com' : 'بريدك@الإلكتروني.com'}
+                          placeholder={language === 'en' ? 'your@email.com' : 'your@email.com'}
                         />
                       </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium">
-                        {language === 'en' ? 'Link (e.g. add a Google Drive link in case you want to shre a dataset)' : 'الرابط (مثلاً: رابط غوغل درايف لملفات البيانات)'}
+                        {language === 'en' ? (
+                          <>Link <span className="text-muted-foreground">(e.g. add a Google Drive link in case you want to share a dataset)</span></>
+                        ) : (
+                          <>الرابط <span className="text-muted-foreground">(مثلاً: رابط غوغل درايف لملفات البيانات)</span></>
+                        )}
                       </label>
                       <input
                         type="url"
@@ -420,7 +436,11 @@ export default  function Home() {
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium">
-                        {language === 'en' ? 'Select Format' : 'اختر الصيغة'}
+                      {language === 'en' ? (
+                        <>Select Format <span className="text-muted-foreground">(you can select multiple items)</span></>
+                      ) : (
+                        <>اختر الصيغة <span className="text-muted-foreground">(يمكنك اختيار أكثر من بند)</span></>
+                      )}
                       </label>
                       <ToggleGroup
                         type="multiple"
@@ -460,7 +480,11 @@ export default  function Home() {
 
                     <div className="space-y-2">
                       <label className="text-sm font-medium">
-                        {language === 'en' ? 'Select Topic' : 'اختر الموضوع'}
+                      {language === 'en' ? (
+                        <>Select Topic <span className="text-muted-foreground">(you can select multiple items)</span></>
+                      ) : (
+                        <>اختر الموضوع <span className="text-muted-foreground">(يمكنك اختيار أكثر من بند)</span></>
+                      )}
                       </label>
                       <ToggleGroup
                         type="multiple"
@@ -514,7 +538,11 @@ export default  function Home() {
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium">
-                        {language === 'en' ? 'Description (optional)' : 'الوصف (اختياري)'}
+                        {language === 'en' ? (
+                          <>Description <span className="text-muted-foreground">(optional)</span></>
+                        ) : (
+                          <>الوصف <span className="text-muted-foreground">(اختياري)</span></>
+                        )}
                       </label>
                       <textarea
                         name="description"
